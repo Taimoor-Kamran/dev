@@ -1,0 +1,21 @@
+name: CI Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check file content
+        run: |
+          if grep -q "Application" file.txt; then
+            echo "Validation Passed!"
+          else
+            echo "Validation Failed! file.txt must content 'Application'"
+            exit 1
+          fi
+
