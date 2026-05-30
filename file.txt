@@ -1,2 +1,2 @@
 Main Application
-Added Login Feature by Sameer
+Added Login Feature by Sameer Khan
